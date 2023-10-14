@@ -48,7 +48,7 @@ def getDistanceBetweenPointsNew(latitude1, longitude1, latitude2, longitude2, un
         return round(distance * 1.609344, 2)
 
 
-def getfesdot(fesname):
+def getfesdot(fesname): # csv파일에서 축제 좌표값 가져오기
     fes = pd.read_csv('C:\\Users\\j\\Documents\\카카오톡 받은 파일\\festival_좌표추가.csv')
     find = fes['축제명'] == fesname
     idx = fes[find]['좌표'].index
@@ -66,7 +66,7 @@ data = json.loads(sooncheon)
 
 print(len(data))
 data[0]['x']
-def getdistance(fesname):
+def getdistance(fesname): # 숙소와 축제장소의 거리계산
     distance = []
     x_1, y_1 = getfesdot(fesname)
     for i in range(len(data)):
@@ -78,5 +78,4 @@ def getdistance(fesname):
 getdistance('함평나비대축제')
 
 
-getDistanceBetweenPointsNew(x,y, 34.2983013331782,126.527417390146)
 
